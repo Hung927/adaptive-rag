@@ -1,0 +1,351 @@
+2026-04-22 09:55:59,730 root                                     INFO     ================================================================================
+2026-04-22 09:55:59,730 root                                     INFO     Eval session started — log: eval/logs/eval_20260422_095559.log
+2026-04-22 09:55:59,731 root                                     INFO     ================================================================================
+2026-04-22 09:56:00,342 httpx                                    INFO     HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-22 09:56:00,528 httpx                                    INFO     HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2026-04-22 09:56:01,717 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:56:01,717 eval.tests.test_review_comparison        INFO     開始 Review Comparison 評估，共 1 題，4 種組合
+2026-04-22 09:56:01,717 eval.tests.test_review_comparison        INFO     Log 檔案：eval/logs/eval_20260422_095559.log
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review] 開始執行
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review] enable_review_retrieval : False
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review] enable_review_generation: False
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     ------------------------------------------------------------
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review] 題目 1 / 1
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review]   question    : 0~50歲免體檢額度多少
+2026-04-22 09:56:01,753 eval.tests.test_review_comparison        INFO     [A_no_review]   ground_truth: 保額3,450萬新臺幣
+2026-04-22 09:56:01,769 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:56:01,769 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸入
+2026-04-22 09:56:01,769 rag.pipeline.nodes.retrieve              INFO     [retrieve]   查詢: 0~50歲免體檢額度多少
+2026-04-22 09:56:03,084 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:03,107 httpx                                    INFO     HTTP Request: POST http://localhost:6333/collections/documents/points/query "HTTP/1.1 200 OK"
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸出
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 0 [new] | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 1 [new] | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 2 [new] | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 3 [new] | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 4 [new] | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:56:03,109 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:56:03,109 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate] 輸入
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:56:03,110 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:56:06,073 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:06,077 rag.pipeline.nodes.generate              INFO     [generate] 輸出
+2026-04-22 09:56:06,077 rag.pipeline.nodes.generate              INFO     [generate]   回答: 根據參考資料[1]，0~50歲的免體檢授權額度為 **3,450萬新臺幣**。  來源: 基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:56:06,077 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:56:06,077 eval.tests.test_review_comparison        INFO     [A_no_review]   answer      : 根據參考資料[1]，0~50歲的免體檢授權額度為 **3,450萬新臺幣**。  來源: 基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:56:06,077 eval.tests.test_review_comparison        INFO     [A_no_review]   sources 數量: 5 筆
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   source[0] 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險種免體檢額度如下表列：     投保年齡
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   source[1] 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 0歲～15歲：30萬～1,000萬 16
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   source[2] 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危險係數：     6年期     投保年
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   source[3] 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為200,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   source[4] 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為100,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review]   latency     : 4.32s
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review] 完成，avg_latency=4.32s, ret_triggered=0, gen_triggered=0
+2026-04-22 09:56:06,078 eval.tests.test_review_comparison        INFO     [A_no_review] 開始 RAGAS 評估...
+2026-04-22 09:56:09,064 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:09,585 ragas.prompt.pydantic_prompt             WARNING  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-04-22 09:56:10,677 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:11,605 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:12,186 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:12,187 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:12,188 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:12,188 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:19,388 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:20,578 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:21,690 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:25,629 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:27,293 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:28,489 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:29,647 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:30,573 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:32,093 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:36,176 eval.tests.test_review_comparison        INFO     [A_no_review] 題目 1 RAGAS | faith=0.5000 | relevancy=0.4792 | correctness=0.1267 | precision=1.0000 | recall=1.0000
+2026-04-22 09:56:36,178 eval.tests.test_review_comparison        INFO     [A_no_review] 平均 | faith=0.5000 | relevancy=0.4792 | correctness=0.1267 | precision=1.0000 | recall=1.0000 | latency=4.32s
+2026-04-22 09:56:36,178 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 開始執行
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only] enable_review_retrieval : True
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only] enable_review_generation: False
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     ------------------------------------------------------------
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 題目 1 / 1
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   question    : 0~50歲免體檢額度多少
+2026-04-22 09:56:36,179 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   ground_truth: 保額3,450萬新臺幣
+2026-04-22 09:56:36,195 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:56:36,196 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸入
+2026-04-22 09:56:36,196 rag.pipeline.nodes.retrieve              INFO     [retrieve]   查詢: 0~50歲免體檢額度多少
+2026-04-22 09:56:36,206 httpx                                    INFO     HTTP Request: POST http://localhost:6333/collections/documents/points/query "HTTP/1.1 200 OK"
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸出
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 0 [new] | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 1 [new] | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 2 [new] | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 3 [new] | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 4 [new] | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:56:36,208 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     ============================================================
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval] 輸入
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:56:36,209 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:56:38,450 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:38,452 rag.pipeline.nodes.review_retrieval      WARNING  [review_retrieval] 回傳非 JSON，視為通過 | raw=```json
+{
+    "confirmed_chunk_ids": [0],
+    "passed": true,
+    "feedback": ""
+}
+```
+2026-04-22 09:56:38,453 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval] 輸出
+2026-04-22 09:56:38,453 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   passed        : True
+2026-04-22 09:56:38,453 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   confirmed_ids : [0, 1, 2, 3, 4]
+2026-04-22 09:56:38,453 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   confirmed_chunks: 5 筆 / 共 5 筆
+2026-04-22 09:56:38,454 rag.pipeline.nodes.review_retrieval      INFO     ============================================================
+2026-04-22 09:56:38,455 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:56:38,455 rag.pipeline.nodes.generate              INFO     [generate] 輸入
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:56:38,456 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:56:40,059 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:40,061 rag.pipeline.nodes.generate              INFO     [generate] 輸出
+2026-04-22 09:56:40,062 rag.pipeline.nodes.generate              INFO     [generate]   回答: 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。  來源: 基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:56:40,062 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:56:40,063 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   answer      : 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。  來源: 基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:56:40,063 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   sources 數量: 5 筆
+2026-04-22 09:56:40,064 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   source[0] 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險種免體檢額度如下表列：     投保年齡
+2026-04-22 09:56:40,064 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   source[1] 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 0歲～15歲：30萬～1,000萬 16
+2026-04-22 09:56:40,064 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   source[2] 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危險係數：     6年期     投保年
+2026-04-22 09:56:40,064 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   source[3] 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為200,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:56:40,064 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   source[4] 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為100,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:56:40,065 eval.tests.test_review_comparison        INFO     [B_ret_review_only]   latency     : 3.88s
+2026-04-22 09:56:40,065 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 完成，avg_latency=3.88s, ret_triggered=0, gen_triggered=0
+2026-04-22 09:56:40,065 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 開始 RAGAS 評估...
+2026-04-22 09:56:40,652 openai._base_client                      INFO     Retrying request to /chat/completions in 0.448733 seconds
+2026-04-22 09:56:42,233 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:42,785 ragas.prompt.pydantic_prompt             WARNING  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-04-22 09:56:43,750 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:44,772 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:45,384 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:45,385 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:45,385 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:45,385 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:51,767 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:53,892 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:54,977 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:56,203 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:57,194 openai._base_client                      INFO     Retrying request to /embeddings in 0.455237 seconds
+2026-04-22 09:56:58,034 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:56:59,049 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:01,062 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:03,538 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:06,472 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 題目 1 RAGAS | faith=0.0000 | relevancy=0.4266 | correctness=0.6508 | precision=1.0000 | recall=1.0000
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [B_ret_review_only] 平均 | faith=0.0000 | relevancy=0.4266 | correctness=0.6508 | precision=1.0000 | recall=1.0000 | latency=3.88s
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 開始執行
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only] enable_review_retrieval : False
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only] enable_review_generation: True
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     ------------------------------------------------------------
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 題目 1 / 1
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   question    : 0~50歲免體檢額度多少
+2026-04-22 09:57:09,659 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   ground_truth: 保額3,450萬新臺幣
+2026-04-22 09:57:09,673 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:57:09,674 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸入
+2026-04-22 09:57:09,674 rag.pipeline.nodes.retrieve              INFO     [retrieve]   查詢: 0~50歲免體檢額度多少
+2026-04-22 09:57:09,683 httpx                                    INFO     HTTP Request: POST http://localhost:6333/collections/documents/points/query "HTTP/1.1 200 OK"
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸出
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 0 [new] | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 1 [new] | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 2 [new] | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 3 [new] | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 4 [new] | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:09,688 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:57:09,688 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate] 輸入
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:09,689 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:11,018 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:11,019 rag.pipeline.nodes.generate              INFO     [generate] 輸出
+2026-04-22 09:57:11,019 rag.pipeline.nodes.generate              INFO     [generate]   回答: 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。
+2026-04-22 09:57:11,020 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:11,020 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:11,021 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸入
+2026-04-22 09:57:11,021 rag.pipeline.nodes.review_generation     INFO     [review_generation]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:11,021 rag.pipeline.nodes.review_generation     INFO     [review_generation]   回答: 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。
+2026-04-22 09:57:12,465 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:12,467 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸出
+2026-04-22 09:57:12,467 rag.pipeline.nodes.review_generation     INFO     [review_generation]   passed  : False
+2026-04-22 09:57:12,467 rag.pipeline.nodes.review_generation     INFO     [review_generation]   feedback: 回答中的免體檢授權額度為 3,450萬新臺幣，但參考資料中並未提供具體的數字，因此該內容屬於編造。
+2026-04-22 09:57:12,467 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:12,469 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:12,469 rag.pipeline.nodes.generate              INFO     [generate] 輸入
+2026-04-22 09:57:12,469 rag.pipeline.nodes.generate              INFO     [generate]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:12,470 rag.pipeline.nodes.generate              INFO     [generate]   feedback: 回答中的免體檢授權額度為 3,450萬新臺幣，但參考資料中並未提供具體的數字，因此該內容屬於編造。
+2026-04-22 09:57:13,906 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:13,908 rag.pipeline.nodes.generate              INFO     [generate] 輸出
+2026-04-22 09:57:13,908 rag.pipeline.nodes.generate              INFO     [generate]   回答: 根據參考資料 [1] 的內容，0~50歲的免體檢授權額度為 **3,450萬新臺幣**。  來源：基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:57:13,908 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:13,909 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:13,909 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸入
+2026-04-22 09:57:13,910 rag.pipeline.nodes.review_generation     INFO     [review_generation]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:13,910 rag.pipeline.nodes.review_generation     INFO     [review_generation]   回答: 根據參考資料 [1] 的內容，0~50歲的免體檢授權額度為 **3,450萬新臺幣**。  來源：基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:57:15,913 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:15,913 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸出
+2026-04-22 09:57:15,913 rag.pipeline.nodes.review_generation     INFO     [review_generation]   passed  : False
+2026-04-22 09:57:15,913 rag.pipeline.nodes.review_generation     INFO     [review_generation]   feedback: 回答中的免體檢授權額度為 3,450萬新臺幣，但參考資料中並未提供具體的免體檢額度數字，因此該數字可能是編造的。
+2026-04-22 09:57:15,913 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   answer      : 根據參考資料 [1] 的內容，0~50歲的免體檢授權額度為 **3,450萬新臺幣**。  來源：基業長傳_商品簡報_11308版.pdf (第10頁)
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   sources 數量: 5 筆
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   source[0] 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險種免體檢額度如下表列：     投保年齡
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   source[1] 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 0歲～15歲：30萬～1,000萬 16
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   source[2] 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危險係數：     6年期     投保年
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   source[3] 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為200,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   source[4] 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為100,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   latency     : 6.25s
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only]   review_generation triggered retry
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 完成，avg_latency=6.25s, ret_triggered=0, gen_triggered=1
+2026-04-22 09:57:15,914 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 開始 RAGAS 評估...
+2026-04-22 09:57:16,534 openai._base_client                      INFO     Retrying request to /chat/completions in 0.452615 seconds
+2026-04-22 09:57:17,709 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:18,285 ragas.prompt.pydantic_prompt             WARNING  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-04-22 09:57:19,275 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:20,295 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:20,801 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:20,802 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:20,803 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:20,804 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:26,590 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:27,572 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:28,517 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:31,059 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:32,194 openai._base_client                      INFO     Retrying request to /embeddings in 0.440745 seconds
+2026-04-22 09:57:32,331 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:33,860 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:34,778 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:35,783 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:39,154 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:42,414 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 題目 1 RAGAS | faith=0.5000 | relevancy=0.5113 | correctness=0.1259 | precision=1.0000 | recall=1.0000
+2026-04-22 09:57:42,415 eval.tests.test_review_comparison        INFO     [C_gen_review_only] 平均 | faith=0.5000 | relevancy=0.5113 | correctness=0.1259 | precision=1.0000 | recall=1.0000 | latency=6.25s
+2026-04-22 09:57:42,415 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:57:42,415 eval.tests.test_review_comparison        INFO     [D_both_reviews] 開始執行
+2026-04-22 09:57:42,415 eval.tests.test_review_comparison        INFO     [D_both_reviews] enable_review_retrieval : True
+2026-04-22 09:57:42,415 eval.tests.test_review_comparison        INFO     [D_both_reviews] enable_review_generation: True
+2026-04-22 09:57:42,416 eval.tests.test_review_comparison        INFO     ------------------------------------------------------------
+2026-04-22 09:57:42,416 eval.tests.test_review_comparison        INFO     [D_both_reviews] 題目 1 / 1
+2026-04-22 09:57:42,416 eval.tests.test_review_comparison        INFO     [D_both_reviews]   question    : 0~50歲免體檢額度多少
+2026-04-22 09:57:42,416 eval.tests.test_review_comparison        INFO     [D_both_reviews]   ground_truth: 保額3,450萬新臺幣
+2026-04-22 09:57:42,434 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:57:42,435 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸入
+2026-04-22 09:57:42,435 rag.pipeline.nodes.retrieve              INFO     [retrieve]   查詢: 0~50歲免體檢額度多少
+2026-04-22 09:57:42,443 httpx                                    INFO     HTTP Request: POST http://localhost:6333/collections/documents/points/query "HTTP/1.1 200 OK"
+2026-04-22 09:57:42,444 rag.pipeline.nodes.retrieve              INFO     [retrieve] 輸出
+2026-04-22 09:57:42,444 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 0 [new] | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:42,444 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 1 [new] | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:42,444 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 2 [new] | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:42,444 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 3 [new] | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:42,445 rag.pipeline.nodes.retrieve              INFO     [retrieve]   Chunk 4 [new] | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:42,445 rag.pipeline.nodes.retrieve              INFO     ============================================================
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     ============================================================
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval] 輸入
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 相似度: 0.535 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 相似度: 0.389 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 相似度: 0.388 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 相似度: 0.373 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:42,445 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 相似度: 0.370 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:43,972 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:43,973 rag.pipeline.nodes.review_retrieval      WARNING  [review_retrieval] 回傳非 JSON，視為通過 | raw=```json
+{
+    "confirmed_chunk_ids": [0],
+    "passed": true,
+    "feedback": ""
+}
+```
+2026-04-22 09:57:43,973 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval] 輸出
+2026-04-22 09:57:43,974 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   passed        : True
+2026-04-22 09:57:43,974 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   confirmed_ids : [0, 1, 2, 3, 4]
+2026-04-22 09:57:43,974 rag.pipeline.nodes.review_retrieval      INFO     [review_retrieval]   confirmed_chunks: 5 筆 / 共 5 筆
+2026-04-22 09:57:43,974 rag.pipeline.nodes.review_retrieval      INFO     ============================================================
+2026-04-22 09:57:43,975 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:43,975 rag.pipeline.nodes.generate              INFO     [generate] 輸入
+2026-04-22 09:57:43,975 rag.pipeline.nodes.generate              INFO     [generate]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:43,976 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:43,976 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:43,976 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:43,976 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:43,976 rag.pipeline.nodes.generate              INFO     [generate]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:45,486 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:45,486 rag.pipeline.nodes.generate              INFO     [generate] 輸出
+2026-04-22 09:57:45,486 rag.pipeline.nodes.generate              INFO     [generate]   回答: 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。
+2026-04-22 09:57:45,486 rag.pipeline.nodes.generate              INFO     ============================================================
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸入
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   問題: 0~50歲免體檢額度多少
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   回答: 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   Chunk 0 | 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   Chunk 1 | 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   Chunk 2 | 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   Chunk 3 | 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為20
+2026-04-22 09:57:45,487 rag.pipeline.nodes.review_generation     INFO     [review_generation]   Chunk 4 | 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為10
+2026-04-22 09:57:46,490 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:46,492 rag.pipeline.nodes.review_generation     INFO     [review_generation] 輸出
+2026-04-22 09:57:46,492 rag.pipeline.nodes.review_generation     INFO     [review_generation]   passed  : True
+2026-04-22 09:57:46,492 rag.pipeline.nodes.review_generation     INFO     ============================================================
+2026-04-22 09:57:46,493 eval.tests.test_review_comparison        INFO     [D_both_reviews]   answer      : 根據參考資料 [1] 中的內容，0~50歲的免體檢授權額度（投保面額）為 **3,450萬新臺幣**。
+2026-04-22 09:57:46,494 eval.tests.test_review_comparison        INFO     [D_both_reviews]   sources 數量: 5 筆
+2026-04-22 09:57:46,494 eval.tests.test_review_comparison        INFO     [D_both_reviews]   source[0] 基業長傳_商品簡報_11308版.pdf p10 | 投保規則-4   項目: 內 容   體檢規定:     1.體檢保額=投保面額。     2.本險種單獨累計計算體檢保額，不與其他險種累計。     3.本險種免體檢額度如下表列：     投保年齡
+2026-04-22 09:57:46,494 eval.tests.test_review_comparison        INFO     [D_both_reviews]   source[1] 基業長傳_商品簡報_11308版.pdf p7 | 投保規則-1     項目 |  | 內 容   繳費年期、 投保年齡 及投保限額 |  | 繳費年期 投保年齡 投保限額(新臺幣/元) 6年期 0歲～74歲 0歲～15歲：30萬～1,000萬 16
+2026-04-22 09:57:46,494 eval.tests.test_review_comparison        INFO     [D_both_reviews]   source[2] 基業長傳_商品簡報_11308版.pdf p9 | 投保規則-3   項目: 內 容   保額限制:     1.進行核保時，以危險保額作為被保險人累計保額計算基礎；危險保額=投保金額×危險係數。     2.危險係數：     6年期     投保年
+2026-04-22 09:57:46,495 eval.tests.test_review_comparison        INFO     [D_both_reviews]   source[3] 基業長傳_商品簡報_11308版.pdf p12 | 投保範例-2   - 林先生40歲投保本商品，繳費10年期，投保金額3,960,712元為例   - 原始年繳保費為208,333元，經費率折減後年繳保費為200,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:57:46,495 eval.tests.test_review_comparison        INFO     [D_both_reviews]   source[4] 基業長傳_商品簡報_11308版.pdf p13 | 投保範例-3   - 林先生40歲投保本商品，繳費20年期，投保金額3,555,204元為例   - 原始年繳保費為104,167元，經費率折減後年繳保費為100,000元【首/續期轉帳費率折減1.0
+2026-04-22 09:57:46,495 eval.tests.test_review_comparison        INFO     [D_both_reviews]   latency     : 4.08s
+2026-04-22 09:57:46,495 eval.tests.test_review_comparison        INFO     [D_both_reviews] 完成，avg_latency=4.08s, ret_triggered=0, gen_triggered=0
+2026-04-22 09:57:46,495 eval.tests.test_review_comparison        INFO     [D_both_reviews] 開始 RAGAS 評估...
+2026-04-22 09:57:47,116 openai._base_client                      INFO     Retrying request to /chat/completions in 0.449650 seconds
+2026-04-22 09:57:48,323 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:48,926 ragas.prompt.pydantic_prompt             WARNING  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+2026-04-22 09:57:49,768 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:50,748 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:51,278 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:51,279 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:51,280 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:51,281 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:57,482 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:57:58,596 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:00,271 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:01,848 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:05,191 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:06,172 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:07,256 openai._base_client                      INFO     Retrying request to /embeddings in 0.447879 seconds
+2026-04-22 09:58:08,090 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:09,039 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:09,594 httpx                                    INFO     HTTP Request: POST http://140.96.111.220:4000/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01 "HTTP/1.1 200 OK"
+2026-04-22 09:58:12,853 eval.tests.test_review_comparison        INFO     [D_both_reviews] 題目 1 RAGAS | faith=0.5000 | relevancy=0.4266 | correctness=0.1495 | precision=1.0000 | recall=1.0000
+2026-04-22 09:58:12,853 eval.tests.test_review_comparison        INFO     [D_both_reviews] 平均 | faith=0.5000 | relevancy=0.4266 | correctness=0.1495 | precision=1.0000 | recall=1.0000 | latency=4.08s
+2026-04-22 09:58:12,853 eval.tests.test_review_comparison        INFO     ================================================================================
+2026-04-22 09:58:12,853 eval.tests.test_review_comparison        INFO     評估完成 — CSV 儲存至：eval/datasets/review_comparison_20260422_095812.csv
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     組合                          faith  relevancy  correctness  precision   recall   latency
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     ------------------------------------------------------------------------------------------
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     A_no_review                0.5000     0.4792       0.1267     1.0000   1.0000     4.32s
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     B_ret_review_only          0.0000     0.4266       0.6508     1.0000   1.0000     3.88s
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     C_gen_review_only          0.5000     0.5113       0.1259     1.0000   1.0000     6.25s
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     D_both_reviews             0.5000     0.4266       0.1495     1.0000   1.0000     4.08s
+2026-04-22 09:58:12,854 eval.tests.test_review_comparison        INFO     Log 檔案：eval/logs/eval_20260422_095559.log
